@@ -1,0 +1,33 @@
+{
+    "name": "medusaapp/user",
+    "description": "MEDUSA Core Simple Personality User Model",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "David Weiner",
+            "email": "david.l.weiner30030@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/foundation": "^6.0",
+        "illuminate/contracts": "^6.0",
+        "illuminate/notifications": "^6.0",
+        "medusaapp/auth": "dev-master",
+        "silber/bouncer": "v1.0.0-rc.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Personality\\Models\\": "src/Models",
+            "PersonalityUser\\" : "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PersonalityUser\\ServiceProvider"
+            ]
+        }
+    }
+}
