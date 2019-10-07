@@ -32,7 +32,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/../routes/routes.php');
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->publishes([
-            __DIR__.'/../database/seeds' => database_path(''),
+            __DIR__.'/../database/seeds' => database_path('seeds'),
         ], 'core.database');
     }
 }
