@@ -11,11 +11,8 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "illuminate/contracts": "^6.1",
-        "illuminate/notifications": "^6.1",
         "medusaapp/auth": "dev-master",
-        "silber/bouncer": "v1.0.0-rc.6",
-        "illuminate/foundation": "^1.1"
+        "silber/bouncer": "v1.0.0-rc.6"
     },
     "autoload": {
         "psr-4": {
