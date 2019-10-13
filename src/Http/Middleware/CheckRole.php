@@ -2,6 +2,7 @@
 namespace Personality\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Redirect;
 
 class CheckRole
 {
