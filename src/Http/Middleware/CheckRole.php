@@ -15,7 +15,7 @@ class CheckRole
      */
     public function handle($request, Closure $next, $role)
     {
-        if ($request->user()->isNotA($role)) {
+        if (!$request->user() || $request->user()->isNotA($role)) {
             return Redirect::route('not.authorized');
         }
 
