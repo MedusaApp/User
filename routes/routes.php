@@ -15,3 +15,9 @@ Artisan::command('make:admin {email : The email address of the user}', function 
 Route::get('/unauthorized', function () {
     return view('personality::auth.unauthorized');
 })->name('not.authorized');
+
+Route::group(['prefix' => 'admin', 'middleware' => 'role:admin'], function() {
+    Route::get('/admin/pending', function (){
+        return view('admin.pending');
+    });
+});
