@@ -34,5 +34,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->publishes([
             __DIR__.'/../database/seeds' => database_path('seeds'),
         ], 'core.database');
+        $this->app->make('Illuminate\Contracts\Http\Kernel')->pushMiddleware('Personality\Http\Middleware\CheckRole');
     }
 }

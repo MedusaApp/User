@@ -11,3 +11,7 @@ Artisan::command('make:admin {email : The email address of the user}', function 
     }
     $this->info($user->first_name . ' ' . $user->last_name . ' has been made an admininstrator.');
 })->describe('Make the user with the specified email address an admin');
+
+Route::get('/unauthorized', function () {
+    return view('personality::auth.unauthorized');
+})->name('not.authorized');
