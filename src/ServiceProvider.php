@@ -34,6 +34,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->publishes([
             __DIR__.'/../database/seeds' => database_path('seeds'),
         ], 'core.database');
-        $router->aliasMiddleware('role', Personality\Http\Middleware\CheckRole::class);
+        $router->aliasMiddleware('role', \Personality\Http\Middleware\CheckRole::class);
     }
 }
