@@ -19,5 +19,5 @@ Route::get('/unauthorized', function () {
 Route::group(['prefix' => 'admin', 'middleware' => 'role:admin'], function() {
     Route::get('pending', function (){
         return view('admin.pending');
-    })-name('admin.pending');
+    })->name('admin.pending');
 });
