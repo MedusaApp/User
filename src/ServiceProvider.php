@@ -27,13 +27,13 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(\Illuminate\Routing\Router $router)
     {
         $this->loadRoutesFrom(__DIR__.'/../routes/routes.php');
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->publishes([
             __DIR__.'/../database/seeds' => database_path('seeds'),
         ], 'core.database');
-        $this->app->make('Illuminate\Contracts\Http\Kernel')->pushMiddleware('Personality\Http\Middleware\CheckRole');
+        $router->aliasMiddleware('role', Personality\Http\Middleware\CheckRole::class);
     }
 }
