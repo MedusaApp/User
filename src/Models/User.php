@@ -113,4 +113,9 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function laratablesCustomAction($user)
+    {
+        return '<span class="view-user fas fa-eye fa-sm" data-id="' . $user->id . '" title="View User" data-toggle="tooltip"></span>';
+    }
 }

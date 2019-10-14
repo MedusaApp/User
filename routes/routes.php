@@ -14,10 +14,14 @@ Artisan::command('make:admin {email : The email address of the user}', function 
 
 Route::get('/unauthorized', function () {
     return view('personality::auth.unauthorized');
-})->name('not.authorized');
+})->name('not.authorized')->middleware('auth');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'role:admin'], function() {
-    Route::get('pending', function (){
-        return view('admin.pending');
-    })->name('admin.pending');
+Route::group(['prefix' => 'admin', 'middleware' => 'web'], function() {
+    Route::middleware('role:admin')->namespace('App\Http\Controllers')->group(function() {
+        Route::get('pending')->uses('PendingController@index')->name('admin.pending');
+
+        Route::group(['prefix' => 'api/v1'], function() {
+            Route::get('pending')->uses('PendingController@getPendingUsers')->name('pending.users');
+        });
+    });
 });
