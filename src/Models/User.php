@@ -118,4 +118,14 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return '<span class="view-user fas fa-eye fa-sm" data-id="' . $user->id . '" title="View User" data-toggle="tooltip"></span>';
     }
+
+    public static function laratablesDob($user)
+    {
+        return date('F j, Y', strtotime($user->dob));
+    }
+
+    public static function laratablesApplicationDate($user)
+    {
+        return date('F j, Y', strtotime($user->application_date));
+    }
 }
