@@ -12,7 +12,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function register()
     {
-        // Bouncer expects App\User and we're using App\Models\User
+        // Bouncer and other things expects App\User and we're using Personality\Models\User
 
         if (class_exists('Illuminate\Foundation\AliasLoader')) {
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();
