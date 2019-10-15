@@ -1,5 +1,6 @@
 <?php
 use Personality\Http\Controllers\PendingController;
+use Personality\Models\User;
 
 Artisan::command('make:admin {email : The email address of the user}', function ($email) {
     $user = User::whereEmail($email)->firstOrFail();
