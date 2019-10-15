@@ -49,6 +49,7 @@ class PendingController extends Controller
     {
         if ($user = User::find($id)) {
             $user->membership_status = 'active';
+            $user->assign('member');
             $user->save();
             return response()->json(['status' => 'ok']);
         }
